@@ -27,6 +27,7 @@ var User = {
     isActive: true
 };
 var createUser = function (_a) {
+
     var name = _a.name, Id = _a.Id;
     //({name,Id} It is the properties which we are using inside the function sent to the function parameter
     //{name:string , Id:number}) this is the type of properties which are sent as arguments to the functions 
