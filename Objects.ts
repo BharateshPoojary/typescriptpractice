@@ -29,5 +29,5 @@ type credDetails = {
 type userDetails={
     userName:string
 }
-type userCreds=credDetails & userDetails ;
+type userCredendials=credDetails & userDetails;
 //above is the common scenario where we can combine the two types using & symbol now userCreds is having two property
