@@ -8,4 +8,4 @@ var User = /** @class */ (function () {
     return User;
 }());
 var printusercreds = new User("bharat", 26);
-printusercreds.city = "";
+printusercreds.city = "mumbai";
