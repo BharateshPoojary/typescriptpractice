@@ -21,7 +21,7 @@ class User {
     ) {
         this.name = name;
         this.id = id;
-        this.password = 2;
+        this.password = 2; //protected property can only be accessed with in parent and child class
         this.city = city;
     }
     get getName() {
