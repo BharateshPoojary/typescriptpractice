@@ -18,11 +18,13 @@
 // }
 //METHOD 2 USED BY EXPERTS
 class User{
-  
+    public readonly city :string ;
     constructor( //This is a simplified syntax in order to avoid this. keyword inside parameter only we have to use modifers and it is automatically assigned as this.name = name
       private name:string,
       public id:number,
-      public city:string  ){//here inside parantheses nothing we have to mention assignment is automatically done
+      city:string//like this city one can also be done but the name id method is concise and better
+      ){//here inside parantheses nothing we have to mention assignment is automatically done
+this.city = city;
     }
 getName(){
      return this.name;//name can only be accessed with in class
