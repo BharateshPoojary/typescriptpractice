@@ -23,12 +23,25 @@ class User {
         this.id = id;
         this.city = city;
     }
-    getName() {
-        return this.name; //name can only be accessed with in class
+    get getName() {
+        return this.name; //name can only be accessed with in class as it is private here but now as we used getter method it can be accessed outside
     }
+    get getId() {
+        return this.id;
+    }
+    set setName(sname) {
+        this.name = sname; //simply setting the name(private) by the value of sname 
+    }
+    //get and set both are keyword specifically for this purpose only
+    //we can also declare a method as private just like in any other language
+    deleteName() {
+        console.log("Name deleted successfully ");
+        this.setName = "bharat";
+    } //This method can only be accessed with in class not allowed from outside the class
 }
 const printusercreds = new User("bharat", 26, "Mumbai"); //"bharat" is unamw and 26 is id here it is passed to name and Id of user class
-console.log(printusercreds.getName()); //This will return name value
+console.log(printusercreds.getName); //This will return name value
+console.log(printusercreds.setName = "Mayank");
 //we can access the fields now like name and Id
 //printusercreds.city = "Mumbai";we cannot assign like this as it is readonly string
 // console.log(printusercreds.name);this cannot be accessed as it is in private scope can be accessed within class itself 
