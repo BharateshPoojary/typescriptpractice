@@ -18,7 +18,8 @@
 // }
 //METHOD 2 USED BY EXPERTS
 class User{
-    public readonly city :string ;
+    public readonly city :string;
+    protected password : number = 2;
     constructor( //This is a simplified syntax in order to avoid this. keyword inside parameter only we have to use modifers and it is automatically assigned as this.name = name
       private name:string,
       public id:number,
@@ -44,6 +45,15 @@ class User{
         this.setName = "bharat";
     }//This method can only be accessed with in class not allowed from outside the class
     
+}
+class SubUser extends User{
+    public email :string ="";
+    
+    public get getPassword() : number {
+        return this.password;//password is a protected property it can only be accessed with in parent and child class and cannot be accsessed from outside the class
+    }
+    
+
 }
 const printusercreds = new User("bharat",26,"Mumbai");//"bharat" is unamw and 26 is id here it is passed to name and Id of user class
 console.log(printusercreds.getName);//This will return name value

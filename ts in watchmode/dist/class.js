@@ -21,6 +21,7 @@ class User {
     ) {
         this.name = name;
         this.id = id;
+        this.password = 2;
         this.city = city;
     }
     get getName() {
@@ -38,6 +39,15 @@ class User {
         console.log("Name deleted successfully ");
         this.setName = "bharat";
     } //This method can only be accessed with in class not allowed from outside the class
+}
+class SubUser extends User {
+    constructor() {
+        super(...arguments);
+        this.email = "";
+    }
+    get getPassword() {
+        return this.password; //password is a protected property it can only be accessed with in parent and child class and cannot be accsessed from outside the class
+    }
 }
 const printusercreds = new User("bharat", 26, "Mumbai"); //"bharat" is unamw and 26 is id here it is passed to name and Id of user class
 console.log(printusercreds.getName); //This will return name value
