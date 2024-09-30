@@ -8,7 +8,7 @@ interface Photo{
 
 class Email implements Fileexplorer{
     constructor(
-      public  notes:string,
+      public  notes:string,//the type should also be similar
         public phonenolist:number//iF any property is not there it leads to an error
     ){}
 }
