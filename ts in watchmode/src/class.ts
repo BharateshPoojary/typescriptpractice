@@ -20,7 +20,7 @@
 class User{
     public readonly city :string;
     protected password : number = 2;//protected property can only be accessed with in parent and child class
-    constructor( //This is a simplified syntax in order to avoid this. keyword inside parameter only we have to use modifers and it is automatically assigned as this.name = name
+    constructor( //This is a simplified syntax in order to avoid this. variable name  inside parameter only we have to use modifers and it is automatically assigned as this.name = name
       private name:string,
       public id:number,
       city:string//like this city one can also be done but the name id method is concise and better
