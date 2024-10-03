@@ -46,14 +46,13 @@ class User{
     }//This method can only be accessed with in class not allowed from outside the class
     
 }
-class SubUser extends User{
+class SubUser extends User{//there is a difference between a normal class inhertance and abstract class inheritance 
     public email :string ="";
     
     public get getPassword() : number {
         return this.password;//password is a protected property it can only be accessed with in parent and child class and cannot be accsessed from outside the class
     }
     
-
 }
 const printusercreds = new User("bharat",26,"Mumbai");//"bharat" is unamw and 26 is id here it is passed to name and Id of user class
 console.log(printusercreds.getName);//This will return name value
