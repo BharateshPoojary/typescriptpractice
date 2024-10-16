@@ -1,6 +1,7 @@
 "use strict";
 class Email {
-    constructor(notes, phonenolist //iF any property is not there it leads to an error
+    constructor(notes, //the type should also be similar
+    phonenolist //iF any property is not there it leads to an error
     ) {
         this.notes = notes;
         this.phonenolist = phonenolist;

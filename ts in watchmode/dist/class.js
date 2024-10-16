@@ -16,7 +16,7 @@
 // }
 //METHOD 2 USED BY EXPERTS
 class User {
-    constructor(//This is a simplified syntax in order to avoid this. keyword inside parameter only we have to use modifers and it is automatically assigned as this.name = name
+    constructor(//This is a simplified syntax in order to avoid this. variable name  inside parameter only we have to use modifers and it is automatically assigned as this.name = name
     name, id, city //like this city one can also be done but the name id method is concise and better
     ) {
         this.name = name;
