@@ -37,3 +37,24 @@ return myarr;
 const fourthOne =<T,> (val:T[]):T=>{
 return val[4];
 }
+
+function fifthOne<T,U extends number>(val1:T,val2:U):object{
+return {val1,val2}
+}
+ const vals =  fifthOne("2",5);
+//this will give the output { val1: "2", val2: 5 } but we cannot access the  specific property as we declared the return type as object which is a broader part to accees it we have to mention the return type in a more specific manner like {val1:T,val2:U } like this then we can access the specific  property 
+
+ 
+//we cannot pass string as second argument to a number type which we defined in function definition 
+//although it restricts the usage of generics but it could be used in some cases where we have a custom types 
+//e.g.
+interface Bank{
+    acno:number,
+    acname:string
+}
+
+function customType<T, U extends Bank>(val3:T,val4:U):object{
+return{val3,val4};
+}
+customType(3,{acno:2,acname:"bh"})
+//like in this scenario if we want to specify a custom type we can use extends keyword
