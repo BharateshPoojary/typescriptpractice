@@ -58,3 +58,17 @@ return{val3,val4};
 }
 customType(3,{acno:2,acname:"bh"})
 //like in this scenario if we want to specify a custom type we can use extends keyword
+
+//Generic classes
+//Generics allow you to create a class, function, or interface that works with various types while ensuring type safety.
+class AplhaRec<T>{
+        constructor(
+            public alpha:T
+        ){}
+    getAplha():T{
+        return this.alpha;
+    }
+}
+const a = new AplhaRec<string>("Hello");
+console.log(a.getAplha());
+//This is a generic class where it can accept string type values like this we can do for any type and it will lock that value ensuring typesafety simlar to generic function which we seen previously
