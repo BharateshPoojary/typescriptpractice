@@ -44,4 +44,22 @@ function isInstance(x) {
 }
 isInstance(new Date()); //creating an instance of date
 isInstance("hello bharat");
-//Type predicates in ts
+function isFish(pet) {
+    return pet.swim !== undefined;
+} //if it is not undefined then the pet is Fish and we can access its method 
+//if we not make the return type pet is Fish it returns a boolean value 
+//at that time ts is still confused whether its a Fish or Bird type so we have to explicitly cast that pet is Fish thatswhy the return type is like that
+function checkIsFish(pet) {
+    if (isFish(pet)) {
+        pet.swim();
+        console.log("Its a fish");
+    }
+    else {
+        pet;
+        console.log("Its a bird");
+    }
+}
+let fish = {
+    swim: () => console.log("Hi")
+}; //I have defined a fish object here which is having Fish type
+checkIsFish(fish);

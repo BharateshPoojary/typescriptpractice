@@ -58,5 +58,26 @@ isInstance(new Date());//creating an instance of date
 isInstance("hello bharat")
 
 //Type predicates in ts
+type Fish={swim:()=>void}//type Fish defines an object type with a swim method that returns void. Any object that is assigned this type must have a swim method.
+type Bird={fly:()=>void}
+function isFish(pet:Fish|Bird):pet is Fish{
+    return(pet as Fish).swim !== undefined
+}//if it is not undefined then the pet is Fish and we can access its method 
+//if we not make the return type pet is Fish it returns a boolean value 
+//at that time ts is still confused whether its a Fish or Bird type so we have to explicitly cast that pet is Fish thatswhy the return type is like that
 
- 
+function checkIsFish(pet:Fish|Bird){
+    if(isFish(pet)){
+        pet.swim();
+        console.log("Its a fish");
+    }else{
+        pet 
+        console.log("Its a bird"); 
+    }
+}
+
+let fish:Fish={
+    swim:() =>console.log("Hi")
+    
+}//I have defined a fish object here which is having Fish type
+checkIsFish(fish)
