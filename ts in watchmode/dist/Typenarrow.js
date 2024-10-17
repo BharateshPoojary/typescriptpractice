@@ -63,3 +63,27 @@ let fish = {
     swim: () => console.log("Hi")
 }; //I have defined a fish object here which is having Fish type
 checkIsFish(fish); //I am passing fish object of type Fish 
+function whichShape(shape) {
+    if (shape.kind === "circle") {
+        return Math.PI * shape.radius ^ 2;
+    }
+    // return shape.side * shape.side
+}
+// Function that uses the discriminated union
+function whichShapeusingSwitch(shape) {
+    switch (shape.kind) {
+        case "circle":
+            return Math.PI * shape.radius ^ 2;
+        case "square":
+            return shape.side * shape.side;
+        case "rectangle":
+            return shape.length * shape.width;
+        default:
+            // Exhaustive check for all cases
+            const _defaultforshape = shape;
+            return _defaultforshape;
+    }
+}
+/**TypeScript automatically narrows down the type within switch statements or conditional blocks based on the discriminant property. For instance, shape.kind in the example above narrows down the type of shape to Square, Circle, or Rectangle within each case.
+
+Exhaustiveness Checking: In the default case, you can use a variable with the never type to ensure that all possible cases are handled. If a new type is added to the Shape union in the future, TypeScript will produce an error if it is not handled in the switch statement, making the code easier to maintain. */ 

@@ -81,3 +81,48 @@ let fish:Fish={
     
 }//I have defined a fish object here which is having Fish type
 checkIsFish(fish)//I am passing fish object of type Fish 
+
+
+//Discriminated unions and exhaustive checking 
+/**discriminated unions (also known as tagged unions or algebraic data types) are a way to create type-safe structures that handle different possible types of objects with a shared property. This feature is particularly useful when working with complex data structures that can vary in form but have a common distinguishing property, often referred to as a discriminant or tag.
+ * A discriminated union consists of multiple types that have a common property with different literal types. TypeScript uses this property to determine the exact type of an object {in our case Shape is an object which has 3 types here} and provides type narrowing based on it. This enables TypeScript to understand which type you're working with, allowing it to provide better type checking and autocomplete suggestions.
+ */
+interface Circle{
+    kind:"circle",
+    radius:number
+}
+interface Square{
+    kind:"square",
+    side:number
+}
+interface Rectangle{
+    kind:"rectangle",
+    length:number,
+    width:number
+}
+//Create a discriminated union type
+type Shape=Circle|Square|Rectangle
+function whichShape(shape:Shape){
+if (shape.kind === "circle") {
+    return Math.PI* shape.radius ^ 2;
+}
+// return shape.side * shape.side
+}
+// Function that uses the discriminated union
+function whichShapeusingSwitch (shape:Shape){
+    switch (shape.kind) {
+        case "circle":
+            return Math.PI * shape.radius ^ 2;
+        case "square":
+            return shape.side * shape.side;
+        case "rectangle":
+            return shape.length * shape.width;
+        default:
+            // Exhaustive check for all cases
+            const _defaultforshape :never = shape
+            return _defaultforshape;
+    }
+}
+/**TypeScript automatically narrows down the type within switch statements or conditional blocks based on the discriminant property. For instance, shape.kind in the example above narrows down the type of shape to Square, Circle, or Rectangle within each case.
+
+Exhaustiveness Checking: In the default case, you can use a variable with the never type to ensure that all possible cases are handled. If a new type is added to the Shape union in the future, TypeScript will produce an error if it is not handled in the switch statement, making the code easier to maintain. */
