@@ -50,8 +50,8 @@ function isFish(pet) {
 //if we not make the return type pet is Fish it returns a boolean value 
 //at that time ts is still confused whether its a Fish or Bird type so we have to explicitly cast that pet is Fish thatswhy the return type is like that
 function checkIsFish(pet) {
-    if (isFish(pet)) {
-        pet.swim();
+    if (isFish(pet)) { //It will verify here  by calling is Fish function if it is fish 
+        pet.swim(); //we can access its method and do some specific operation
         console.log("Its a fish");
     }
     else {
@@ -62,4 +62,4 @@ function checkIsFish(pet) {
 let fish = {
     swim: () => console.log("Hi")
 }; //I have defined a fish object here which is having Fish type
-checkIsFish(fish);
+checkIsFish(fish); //I am passing fish object of type Fish 
