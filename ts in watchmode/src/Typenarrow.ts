@@ -44,3 +44,19 @@ function isDebtPaid(client:Creditors|Debtors){
     }//here we used the in operator to breakdown the properties of interface and we checked if ispaid property exist in client if it is then inside that we can access the isPaid property(Insideif client will be debtors only as we checked using in operator if the property exists then only it will come else it will not  
 
 }
+//instanceof operator
+function isInstance(x:Date|string){
+    if(x instanceof Date){//if x is an instance of Date object
+        console.log(x.toUTCString());
+        
+    }else{
+        console.log(x.length);//else x is a string it will give the length of string 
+        
+    }
+}
+isInstance(new Date());//creating an instance of date
+isInstance("hello bharat")
+
+//Type predicates in ts
+
+ 
